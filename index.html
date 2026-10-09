@@ -1,6 +1,136 @@
 <!DOCTYPE html>
-bold;
-            font-size: 16x;
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Welcome to Forest</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(0, 20, 10, 0.55),
+                    rgba(0, 20, 10, 0.65)
+                ),
+                url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Navigation Bar */
+        nav {
+            width: 100%;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 25, 12, 0.55);
+            backdrop-filter: blur(8px);
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: #b7ffb0;
+            letter-spacing: 2px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Menu Button */
+        .menu-btn {
+            background: transparent;
+            border: 2px solid #b7ffb0;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .menu-btn:hover {
+            background: #b7ffb0;
+            color: #103b20;
+        }
+
+        /* Login Button */
+        .login-btn {
+            background: #b7ffb0;
+            color: #103b20;
+            border: 2px solid #b7ffb0;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background: transparent;
+            color: white;
+        }
+
+        /* Main Section */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 80px);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            text-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero h1 span {
+            color: #b7ffb0;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #e4f5e6;
+            margin-bottom: 30px;
+        }
+
+        .explore-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 30px;
+            background: #b7ffb0;
+            color: #103b20;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
             transition: 0.3s;
         }
 
@@ -9,7 +139,7 @@ bold;
             transform: translateY(-3px);
         }
 
-    /
+        /* Menu Dropdown */
         .menu-box {
             display: none;
             position: absolute;
@@ -26,7 +156,7 @@ bold;
         .menu-box a {
             display: block;
             color: white;
-           padding: 14px 18px;
+            padding: 14px 18px;
             text-decoration: none;
             transition: 0.3s;
         }
@@ -43,7 +173,7 @@ bold;
             inset: 0;
             background: rgba(0, 0, 0, 0.75);
             justify-content: center;
-            align-its: center;
+            align-items: center;
             padding: 20px;
             z-index: 20;
         }
@@ -59,7 +189,7 @@ bold;
             position: relative;
         }
 
-      .login-box h2 {
+        .login-box h2 {
             color: #b7ffb0;
             margin-bottom: 25px;
         }
@@ -87,13 +217,13 @@ bold;
             color: #103b20;
             border: none;
             border-radius: 8px;
-           font-size: 16px;
+            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
         }
 
         .close-btn {
-         position: absolute;
+            position: absolute;
             top: 12px;
             right: 16px;
             background: none;
@@ -126,12 +256,12 @@ bold;
 
             .menu-btn,
             .login-btn {
-                padding 9px 13px;
+                padding: 9px 13px;
                 font-size: 14px;
             }
 
             .hero h1 {
-                lette-spacing: 2px;
+                letter-spacing: 2px;
             }
 
             .hero p {
@@ -146,13 +276,156 @@ bold;
     </style>
 </head>
 
-<x" id="menuBox">
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">🌿 FOREST</div>
+
+        <div class="nav-buttons">
+
+            <button class="menu-btn" onclick="toggleMenu()">
+                ☰ Menu
+            </button>
+
+            <button class="login-btn" onclick="openLogin()">
+                Log In
+            </button>
+
+        </div>
+
+        <!-- Menu Options -->
+        <div class="menu-box" id="menuBox">
             <a href="#home" onclick="closeMenu()">🏠 Home</a>
-            <a href="#about" onclick="showAbout(event)">🌲 Abut Forest</a>
+            <a href="#about" onclick="showAbout(event)">🌲 About Forest</a>
             <a href="#contact" onclick="showContact(event)">📩 Contact</a>
         </div>
     </nav>
 
     <!-- Main Homepage -->
-    <section class="hero" id"home"
-   
+    <section class="hero" id="home">
+        <div class="hero-content">
+
+            <h1>Welcome to <span>Forest</span></h1>
+
+            <p>
+              hey nowsad hawlader 
+              welcome to my forest 
+            
+            </p>
+
+            <a href="#about" class="explore-btn"
+               onclick="showAbout(event)">
+                Explore Forest →
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Login Popup -->
+    <div class="login-overlay" id="loginOverlay">
+
+        <div class="login-box">
+
+            <button class="close-btn" onclick="closeLogin()">
+                &times;
+            </button>
+
+            <h2>🌿 Forest Login</h2>
+
+            <form onsubmit="loginMessage(event)">
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Username"
+                    autocomplete="username"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Password"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <button type="submit" class="submit-btn">
+                    Log In
+                </button>
+
+            </form>
+
+            <p class="login-note">
+                Authorized users only.<br>
+                Access is restricted.
+            </p>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Menu Button
+        function toggleMenu() {
+            const menu = document.getElementById("menuBox");
+
+            menu.style.display =
+                menu.style.display === "block"
+                ? "none"
+                : "block";
+        }
+
+        function closeMenu() {
+            document.getElementById("menuBox").style.display = "none";
+        }
+
+        // Login Popup
+        function openLogin() {
+            document.getElementById("loginOverlay").style.display = "flex";
+            closeMenu();
+        }
+
+        function closeLogin() {
+            document.getElementById("loginOverlay").style.display = "none";
+        }
+
+        // Close popup by clicking outside
+        document.getElementById("loginOverlay").addEventListener(
+            "click",
+            function(event) {
+                if (event.target === this) {
+                    closeLogin();
+                }
+            }
+        );
+
+        // Login Demo
+        function loginMessage(event) {
+            event.preventDefault();
+
+            alert(
+                "Login system is not connected yet. " +
+                "A secure authentication system will be added later."
+            );
+        }
+
+        // Temporary menu pages
+        function showAbout(event) {
+            event.preventDefault();
+            closeMenu();
+
+            alert("Welcome to Forest! The About page will be added later.");
+        }
+
+        function showContact(event) {
+            event.preventDefault();
+            closeMenu();
+
+            alert("The Contact page will be added later.");
+        }
+    </script>
+
+</body>
+</html>
