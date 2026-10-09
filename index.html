@@ -1,0 +1,156 @@
+ bold;
+            font-size: 16x;
+            transition: 0.3s;
+        }
+
+        .explore-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+    /
+        .menu-box {
+            display: none;
+            position: absolute;
+            top: 78px;
+            right: 7%;
+            width: 190px;
+            background: rgba(0, 35, 18, 0.96);
+            border: 1px solid #b7ffb0;
+            border-radius: 12px;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .menu-box a {
+            display: block;
+            color: white;
+           padding: 14px 18px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .menu-box a:hover {
+            background: #b7ffb0;
+            color: #103b20;
+        }
+
+        /* Login Popup */
+        .login-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            justify-content: center;
+            align-its: center;
+            padding: 20px;
+            z-index: 20;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 380px;
+            padding: 35px;
+            background: #0d2b1b;
+            border: 1px solid #b7ffb0;
+            border-radius: 18px;
+            text-align: center;
+            position: relative;
+        }
+
+      .login-box h2 {
+            color: #b7ffb0;
+            margin-bottom: 25px;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            border: 1px solid #547a60;
+            border-radius: 8px;
+            background: #183c29;
+            color: white;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .login-box input::placeholder {
+            color: #c2d6c7;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 13px;
+            background: #b7ffb0;
+            color: #103b20;
+            border: none;
+            border-radius: 8px;
+           font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn {
+         position: absolute;
+            top: 12px;
+            right: 16px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .login-note {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #c2d6c7;
+            line-height: 1.5;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            nav {
+                padding: 18px 5%;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .nav-buttons {
+                gap: 8px;
+            }
+
+            .menu-btn,
+            .login-btn {
+                padding 9px 13px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                lette-spacing: 2px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .menu-box {
+                right: 5%;
+                top: 70px;
+            }
+        }
+    </style>
+</head>
+
+<x" id="menuBox">
+            <a href="#home" onclick="closeMenu()">🏠 Home</a>
+            <a href="#about" onclick="showAbout(event)">🌲 Abut Forest</a>
+            <a href="#contact" onclick="showContact(event)">📩 Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Homepage -->
+    <section class="hero" id"home"
